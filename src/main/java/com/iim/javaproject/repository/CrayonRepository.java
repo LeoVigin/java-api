@@ -1,0 +1,9 @@
+package com.iim.javaproject.repository;
+
+import com.iim.javaproject.model.Crayon;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CrayonRepository extends JpaRepository<Crayon, Integer> {;
+}
