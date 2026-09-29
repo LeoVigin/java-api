@@ -1,13 +1,9 @@
 package com.iim.javaproject.service;
 
 import com.iim.javaproject.model.Crayon;
-import com.iim.javaproject.model.Kit;
 import com.iim.javaproject.repository.CrayonRepository;
-import com.iim.javaproject.repository.KitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -21,24 +17,37 @@ public class CrayonService {
         this.crayonRepository = crayonRepository;
     }
 
-    public List<Crayon> getAllCrayons() {
-        return crayonRepository.findAll();
-    }
-
-    public Crayon create(String color){
-        Crayon newCrayon = new Crayon(color);
+//  Create
+    public Crayon create(String color, int length){
+        Crayon newCrayon = new Crayon(color, length);
         Crayon addCrayon = crayonRepository.save(newCrayon);
         return addCrayon;
-//        return new Crayon(id, color);
     }
 
-//    public Crayon update(String color){
-//        Crayon crayon.color = new color;
-//    }
-
+//  Get ID
     public Crayon getById(int id){
         Crayon crayon = crayonRepository.findById(id).get();
         return crayon;
+    }
+
+//  Get All
+    public List<Crayon> getAll() {
+        return crayonRepository.findAll();
+    }
+
+//  Delete
+    public void delete(int id) {
+        crayonRepository.deleteById(id);
+    }
+
+//  Update
+    public Crayon update(int id, Crayon newDataCrayon) {
+        Crayon dataCrayon = crayonRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Person not found with id " + id));
+
+        dataCrayon.setColor(newDataCrayon.getColor());
+
+        return crayonRepository.save(dataCrayon);
     }
 
 }

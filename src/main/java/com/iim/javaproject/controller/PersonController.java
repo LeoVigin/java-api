@@ -26,30 +26,37 @@ public class PersonController {
         this.personService = personService;
     }
 
+    //    Create object
     @PostMapping
     public Person create(@RequestParam String name, @RequestParam int age){
         roleUser.forEach(System.out::println);
         return personService.create(name, age);
     }
 
-    @GetMapping
-    public Person getById(@RequestParam int id) {
+    //    Get Id of object
+    @GetMapping("/{id}")
+    public Person getById(@PathVariable("id") int id) {
         return personService.getById(id);
     }
 
+    //    Get all objects
+    @GetMapping("/all")
+    public List<Person> getAll() {
+        return personService.getAll();
+    }
+
+    //    Update of object
+    @PutMapping("/{id}")
+    public ResponseEntity<Person> update(@PathVariable("id") int id, @RequestBody Person person) {
+        Person updated = personService.update(id, person);
+        return ResponseEntity.ok(updated);
+    }
+
+    //    Delete an object
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable("id") int id) {
         personService.delete(id);
-        return ResponseEntity.ok("Person deleted successfully!");
+        return ResponseEntity.ok("Person deleted successfully");
     }
 
-//    http://localhost:8080/person?name=leo&age=20
-
-//    Update
-//@PutMapping
-//public Person update(@RequestParam int id, @RequestParam String name, @RequestParam int age) {
-//    return personService.update(id, name, age);
-//}
-
-//    Delete
 }

@@ -1,6 +1,5 @@
 package com.iim.javaproject.service;
 
-import com.iim.javaproject.model.Kit;
 import com.iim.javaproject.model.Person;
 import com.iim.javaproject.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +28,21 @@ public class PersonService {
         return person;
     }
 
+    public List<Person> getAll() {
+        return personRepository.findAll();
+    }
+
     public void delete(int id) {
         personRepository.deleteById(id);
+    }
+
+    public Person update(int id, Person newDataPerson) {
+        Person dataPerson = personRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Person not found with id " + id));
+
+        dataPerson.setName(newDataPerson.getName());
+        dataPerson.setAge(newDataPerson.getAge());
+
+        return personRepository.save(dataPerson);
     }
 }

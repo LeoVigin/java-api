@@ -2,10 +2,12 @@ package com.iim.javaproject.controller;
 
 import com.iim.javaproject.model.Crayon;
 import com.iim.javaproject.model.Kit;
+import com.iim.javaproject.model.Person;
 import com.iim.javaproject.service.CrayonService;
 import com.iim.javaproject.service.KitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,17 +27,30 @@ public class CrayonController {
     }
 
     @PostMapping
-    public Crayon create(@RequestParam String color){
+    public Crayon create(@RequestParam String color, @RequestParam int length){
         roleUser.forEach(System.out::println);
-        return crayonService.create(color);
+        return crayonService.create(color, length);
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public Crayon getById(@RequestParam int id) {
         return crayonService.getById(id);
     }
 
-//    Update
+    @GetMapping("/all")
+    public List<Crayon> getAll() {
+        return crayonService.getAll();
+    }
 
-//    Delete
+    @PutMapping("/{id}")
+    public ResponseEntity<Crayon> update(@PathVariable("id") int id, @RequestBody Crayon crayon) {
+        Crayon updated = crayonService.update(id, crayon);
+        return ResponseEntity.ok(updated);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable("id") int id) {
+        crayonService.delete(id);
+        return ResponseEntity.ok("Highlighter deleted successfully");
+    }
 }

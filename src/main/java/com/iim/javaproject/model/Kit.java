@@ -12,11 +12,11 @@ public class Kit {
     private static int CPT = 1;
 
     @Id
-    @JsonProperty("id")
+    @JsonProperty("Id")
     int id;
 
 
-    @JsonProperty("color")
+    @JsonProperty("Color")
     String color;
 
     @JsonProperty("")
@@ -31,5 +31,13 @@ public class Kit {
         this.id = CPT++;
         this.color = color;
         this.maxSpace = 10;
+    }
+
+    public void setColor(String color){
+        this.color = color;
+    }
+
+    public String getColor(){
+        return color;
     }
 }

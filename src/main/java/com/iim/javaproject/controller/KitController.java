@@ -3,6 +3,7 @@ package com.iim.javaproject.controller;
 import com.iim.javaproject.model.Crayon;
 import com.iim.javaproject.model.Kit;
 import com.iim.javaproject.model.PenInterface;
+import com.iim.javaproject.model.Person;
 import com.iim.javaproject.service.CrayonService;
 import com.iim.javaproject.service.KitService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,18 +34,27 @@ public class KitController {
         return kitService.create(color, maxSpace);
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public Kit getById(@RequestParam int id) {
         return kitService.getById(id);
+    }
+
+    @GetMapping("/all")
+    public List<Kit> getAll() {
+        return kitService.getAll();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Kit> update(@PathVariable("id") int id, @RequestBody Kit kit) {
+        Kit updated = kitService.update(id, kit);
+        return ResponseEntity.ok(updated);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable("id") int id) {
         kitService.delete(id);
-        return ResponseEntity.ok("Person deleted successfully!");
+        return ResponseEntity.ok("Kit deleted successfully");
     }
-    //    Update
 
-//    Delete
 
 }

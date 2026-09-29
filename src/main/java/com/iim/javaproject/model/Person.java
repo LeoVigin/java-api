@@ -8,10 +8,11 @@ import java.util.List;
 @Entity
 public class Person {
 
+//    Define properties of object
     private static int CPT = 1;
 
     @Id
-    @JsonProperty("id")
+    @JsonProperty("Id")
     int id;
 
     @JsonProperty("Name")
@@ -27,10 +28,28 @@ public class Person {
     public Person() {
     }
 
+    //    Constructor
     public Person(String name, int age) {
         this.id = CPT++;
         this.name = name;
         this.age = age;
 //        this.kits_id = kits_id;
+    }
+
+    //    Define set and get for update
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setAge(int age){
+        this.age = age;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public int getAge(){
+        return age;
     }
 }

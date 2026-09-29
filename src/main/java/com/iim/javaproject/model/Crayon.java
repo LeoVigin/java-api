@@ -10,15 +10,27 @@ public class Crayon implements PenInterface{
     public Crayon() {}
 
     @Id
-    @JsonProperty("id")
+    @JsonProperty("Id")
     int id;
 
-    @JsonProperty("color")
+    @JsonProperty("Color")
     String color;
 
-    public Crayon(String color) {
+    @JsonProperty("Length")
+    int length;
+
+    public Crayon(String color, int length) {
         this.id = CPT++;
         this.color = color;
+        this.length = length;
+    }
+
+    public void setColor(String color){
+        this.color = color;
+    }
+
+    public String getColor(){
+        return color;
     }
 
     public void write(int length) {
