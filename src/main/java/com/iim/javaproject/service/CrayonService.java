@@ -53,6 +53,7 @@ public class CrayonService {
                 .orElseThrow(() -> new RuntimeException("Person not found with id " + id));
 
 //          If found update the color by the new color put in the raw body of Postman
+//          Height cannot be changed
         dataCrayon.setColor(newDataCrayon.getColor());
 
 //          Save the new data into the repository and return it
