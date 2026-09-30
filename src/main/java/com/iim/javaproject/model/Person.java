@@ -28,7 +28,7 @@ public class Person {
     public Person() {
     }
 
-    //    Constructor
+//      Constructor
     public Person(String name, int age) {
         this.id = CPT++;
         this.name = name;
@@ -40,15 +40,12 @@ public class Person {
     public void setName(String name){
         this.name = name;
     }
-
     public void setAge(int age){
         this.age = age;
     }
-
     public String getName(){
         return name;
     }
-
     public int getAge(){
         return age;
     }

@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Entity
 public class Crayon implements PenInterface{
 
+//    Define properties of object
     private static int CPT = 1;
     public Crayon() {}
 
@@ -19,20 +20,22 @@ public class Crayon implements PenInterface{
     @JsonProperty("Length")
     int length;
 
+//      Constructor
     public Crayon(String color, int length) {
         this.id = CPT++;
         this.color = color;
         this.length = length;
     }
 
+//    Define set and get for update
     public void setColor(String color){
         this.color = color;
     }
-
     public String getColor(){
         return color;
     }
 
+//    Actions set for a Crayon
     public void write(int length) {
         if (length > 10) {
             System.out.println("This crayon can be writen with");
@@ -50,10 +53,5 @@ public class Crayon implements PenInterface{
         } else {
             System.out.println("Available");
         }
-    }
-
-    @Override
-    public String toString() {
-        return "A " + color + " Crayon";
     }
 }

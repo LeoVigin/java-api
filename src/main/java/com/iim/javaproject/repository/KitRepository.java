@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface KitRepository extends JpaRepository<Kit, Integer> {;
+//    All data related to kits are set and retrieved here.
+
 }

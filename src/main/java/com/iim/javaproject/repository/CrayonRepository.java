@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CrayonRepository extends JpaRepository<Crayon, Integer> {;
+//    All data related to crayons are set and retrieved here.
 }

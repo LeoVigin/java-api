@@ -9,5 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Integer> {
+//    All data related to the persons are set and retrieved here.
 }
 

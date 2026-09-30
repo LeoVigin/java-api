@@ -1,7 +1,0 @@
-DATABASE
-
-1 user a plusieur kit kit (@OneToMany)
-1 kit a un user uniquement (@OneToOne + @JoinColumn(Person.id))
-
-1 kit peut avoir plusieurs crayon et highlighter (@OneToMany) - donner principale
-1 crayon ou 1 highlighter a unoquement 1 kit (@ManyToOne + @JoinColumn(Kit.id)) - donner secondaire
