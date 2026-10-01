@@ -17,21 +17,33 @@ public class Highlighter implements PenInterface {
     @JsonProperty("Color")
     String color;
 
+//    Suppose to be the elements to form the link between the crayon and the kit. The kit posses the highlighters.
+    @JsonProperty("Crayon's kit")
+    int kit_id;
+
     public Highlighter() {
     }
 
 //      Constructor
-    public Highlighter(String color) {
+    public Highlighter(String color, int kit_id) {
         this.id = CPT++;
         this.color = color;
+        this.kit_id = kit_id;
     }
 
 //    Define set and get for update
     public void setColor(String color){
         this.color = color;
     }
+    public void setKitId(int kit_id){
+        this.kit_id = kit_id;
+    }
+
     public String getColor(){
         return color;
+    }
+    public int getKitId(){
+        return kit_id;
     }
 
 //    Actions set for a Highlighter

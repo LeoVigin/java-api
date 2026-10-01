@@ -21,19 +21,21 @@ public class Person {
     @JsonProperty("Age")
     int age;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="kits_id")
-    private List<Kit> kits_id;
+//    Suppose to be the elements to form the link between the kit and the person. The person posses the kit.
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name="kits_id")
+    @JsonProperty("Person's kit id")
+    int kit_id;
 
     public Person() {
     }
 
 //      Constructor
-    public Person(String name, int age) {
+    public Person(String name, int age, int kit_id) {
         this.id = CPT++;
         this.name = name;
         this.age = age;
-//        this.kits_id = kits_id;
+        this.kit_id = kit_id;
     }
 
     //    Define set and get for update

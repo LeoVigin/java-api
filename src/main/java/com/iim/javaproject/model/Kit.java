@@ -23,8 +23,6 @@ public class Kit {
     @JsonProperty("")
     int maxSpace;
 
-    private Integer personId;
-
     public Kit() {
     }
 

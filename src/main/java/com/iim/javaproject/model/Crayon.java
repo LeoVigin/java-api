@@ -20,11 +20,17 @@ public class Crayon implements PenInterface{
     @JsonProperty("Length")
     int length;
 
-//      Constructor
-    public Crayon(String color, int length) {
+//    Suppose to be the elements to form the link between the crayon and the kit. The kit posses the crayons.
+    @JsonProperty("Crayon's kit")
+    int kit_id;
+
+
+    //      Constructor
+    public Crayon(String color, int length, int kit_id) {
         this.id = CPT++;
         this.color = color;
         this.length = length;
+        this.kit_id = kit_id;
     }
 
 //    Define set and get for update

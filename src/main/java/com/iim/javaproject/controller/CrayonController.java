@@ -27,9 +27,9 @@ public class CrayonController {
 
 //    Create an object
     @PostMapping
-    public Crayon create(@RequestParam String color, @RequestParam int length){
+    public Crayon create(@RequestParam String color, @RequestParam int length, @RequestParam int kit_id){
         roleUser.forEach(System.out::println);
-        return crayonService.create(color, length);
+        return crayonService.create(color, length, kit_id);
     }
 
 //    Get Id of an object

@@ -1,5 +1,6 @@
 package com.iim.javaproject.controller;
 
+import com.iim.javaproject.model.Kit;
 import com.iim.javaproject.model.Person;
 import com.iim.javaproject.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +28,9 @@ public class PersonController {
 
 //    Create a person
     @PostMapping
-    public Person create(@RequestParam String name, @RequestParam int age){
+    public Person create(@RequestParam String name, @RequestParam int age, @RequestParam int kit_id){
         roleUser.forEach(System.out::println);
-        return personService.create(name, age);
+        return personService.create(name, age, kit_id);
     }
 
 //    Get Id of a person

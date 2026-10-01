@@ -1,13 +1,14 @@
 {
   "info": {
-    "_postman_id": "5f006c8d-6b3f-40f5-81bd-0c05b8bb00b1",
+    "_postman_id": "42960109-b850-45fd-9b6c-84969005ba24",
     "name": "Crayon",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58461974",
+    "_collection_link": "https://go.postman.co/collection/58461974-42960109-b850-45fd-9b6c-84969005ba24?source=collection_link"
   },
   "item": [
     {
       "name": "Create a crayon",
-      "id": "ccc75ae9-d299-436e-b4c0-68657ab6ccde",
       "request": {
         "method": "POST",
         "header": [],
@@ -24,13 +25,11 @@
           "query": [
             {
               "key": "color",
-              "value": "",
-              "uuid": "a9b0103a-26df-4ca4-8315-350bd4e7b0b8"
+              "value": ""
             },
             {
               "key": "length",
-              "value": "",
-              "uuid": "78b3119b-e249-434e-9314-b8e73b22d6d2"
+              "value": ""
             }
           ]
         }
@@ -39,7 +38,6 @@
     },
     {
       "name": "Get a crayon",
-      "id": "bb4bff1a-bdad-4270-857e-1593bcdf927a",
       "request": {
         "method": "GET",
         "header": [],
@@ -60,7 +58,6 @@
     },
     {
       "name": "Get all crayons",
-      "id": "e71d5321-f22e-46a7-89cf-536f69c55ac8",
       "request": {
         "method": "GET",
         "header": [],
@@ -81,7 +78,6 @@
     },
     {
       "name": "Update a crayon",
-      "id": "8b47d732-d069-484b-9104-aebde4535afa",
       "request": {
         "method": "PUT",
         "header": [],
@@ -111,7 +107,6 @@
     },
     {
       "name": "Delete a crayon",
-      "id": "78f40f4f-1531-4454-8fe2-98ba57a89ade",
       "request": {
         "method": "DELETE",
         "header": [],

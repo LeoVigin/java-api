@@ -1,19 +1,20 @@
 {
   "info": {
-    "_postman_id": "f782a58f-4c0b-4bf0-867d-0fb167d8bf44",
+    "_postman_id": "96076a6c-8daa-4a7d-9945-aa8223ed6693",
     "name": "Person",
     "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58461974",
+    "_collection_link": "https://go.postman.co/collection/58461974-96076a6c-8daa-4a7d-9945-aa8223ed6693?source=collection_link"
   },
   "item": [
     {
       "name": "Create a person",
-      "id": "b40da545-5ecd-4b80-8c8b-cc10bd4894ee",
       "request": {
         "method": "POST",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/person?name=&age",
+          "raw": "http://localhost:8080/person?name=&age=&kit_id=",
           "protocol": "http",
           "host": [
             "localhost"
@@ -25,14 +26,16 @@
           "query": [
             {
               "key": "name",
-              "value": "",
-              "uuid": "7b4f6523-43b0-4088-85cd-d09c36d4b195"
+              "value": ""
             },
             {
               "key": "age",
-              "value": null,
-              "type": "text",
-              "uuid": "141f6048-493b-4553-b56e-10756bbcab8e"
+              "value": ""
+            },
+            {
+              "key": "kit_id",
+              "value": "",
+              "type": "text"
             }
           ]
         }
@@ -41,7 +44,6 @@
     },
     {
       "name": "Get a person",
-      "id": "986af893-d66b-4e27-9ab5-652df9a2b35f",
       "request": {
         "method": "GET",
         "header": [],
@@ -62,7 +64,6 @@
     },
     {
       "name": "Get all persons",
-      "id": "7a8579ae-61a5-4946-8161-c6eee17e74c7",
       "request": {
         "method": "GET",
         "header": [],
@@ -83,7 +84,6 @@
     },
     {
       "name": "Update a person",
-      "id": "1f8f03b4-094f-4fc7-ab29-1d422d5fc710",
       "request": {
         "method": "PUT",
         "header": [],
@@ -113,7 +113,6 @@
     },
     {
       "name": "Delete a person",
-      "id": "d6cafc52-4dd5-4f88-8e06-3f14ed10a5a4",
       "request": {
         "method": "DELETE",
         "header": [],

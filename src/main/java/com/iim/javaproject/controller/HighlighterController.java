@@ -27,9 +27,9 @@ public class HighlighterController {
 
 //    Create an object
     @PostMapping
-    public Highlighter create(@RequestParam String color){
+    public Highlighter create(@RequestParam String color, @RequestParam int kit_id){
         roleUser.forEach(System.out::println);
-        return highlighterService.create(color);
+        return highlighterService.create(color, kit_id);
     }
 
 //    Get Id of an object

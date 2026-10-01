@@ -1,13 +1,14 @@
 {
   "info": {
-    "_postman_id": "829be422-3837-46bb-814e-98580b97a62f",
+    "_postman_id": "c4ab2888-3362-4ac8-b7d2-0aed4f56b59a",
     "name": "Highlighter",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58461974",
+    "_collection_link": "https://go.postman.co/collection/58461974-c4ab2888-3362-4ac8-b7d2-0aed4f56b59a?source=collection_link"
   },
   "item": [
     {
       "name": "Create a highlighter",
-      "id": "f3c6b1ca-3adc-4de9-8ecf-a91545d1c0d3",
       "request": {
         "method": "POST",
         "header": [],
@@ -24,8 +25,7 @@
           "query": [
             {
               "key": "color",
-              "value": "",
-              "uuid": "9e7657a1-e52e-4537-8e2b-1130b2e221ff"
+              "value": ""
             }
           ]
         }
@@ -34,7 +34,6 @@
     },
     {
       "name": "Get a highlighter",
-      "id": "69ed8d83-ae26-43cd-83cf-8d0444b40622",
       "request": {
         "method": "GET",
         "header": [],
@@ -55,7 +54,6 @@
     },
     {
       "name": "Get all highlighters",
-      "id": "62aa7989-57f4-46be-b470-1ee8ab288b52",
       "request": {
         "method": "GET",
         "header": [],
@@ -76,7 +74,6 @@
     },
     {
       "name": "Update a highlighter",
-      "id": "e231e9a8-87ec-424d-b764-66f716f8aafd",
       "request": {
         "method": "PUT",
         "header": [],
@@ -106,7 +103,6 @@
     },
     {
       "name": "Delete a highlighter",
-      "id": "caa5c8a8-4c43-453d-aa06-a32b76df0305",
       "request": {
         "method": "DELETE",
         "header": [],

@@ -20,9 +20,9 @@ public class PersonService {
     }
 
 //  Create the person
-    public Person create(String name, int age){
+    public Person create(String name, int age, int kit_id){
 //        Create data with data of the constructor
-        Person newPerson = new Person(name, age);
+        Person newPerson = new Person(name, age, kit_id);
 //        Save data into repository
         Person addPerson = personRepository.save(newPerson);
 //        Return data

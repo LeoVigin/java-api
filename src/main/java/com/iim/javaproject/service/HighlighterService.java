@@ -20,9 +20,9 @@ public class HighlighterService {
     }
 
 //  Create the object
-    public Highlighter create(String color){
+    public Highlighter create(String color, int kit_id){
 //        Create data with data of the constructor
-        Highlighter newHighlighter = new Highlighter(color);
+        Highlighter newHighlighter = new Highlighter(color, kit_id);
 //        Save data into repository
         Highlighter addHighlighter = highlighterRepository.save(newHighlighter);
 //        Return data
@@ -52,7 +52,7 @@ public class HighlighterService {
 //                  If not found throw error/string
                 .orElseThrow(() -> new RuntimeException("Person not found with id " + id));
 
-//          If found update the color by the new color put in the raw body of Postman
+//          If found update the color by the new color and/or id put in the raw body of Postman
         dataHighlighter.setColor(newDataHighlighter.getColor());
 
 //          Save the new data into the repository and return it

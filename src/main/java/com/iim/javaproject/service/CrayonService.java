@@ -20,9 +20,9 @@ public class CrayonService {
     }
 
 //  Create the object
-    public Crayon create(String color, int length){
+    public Crayon create(String color, int length, int kit_id){
 //        Create data with data of the constructor
-        Crayon newCrayon = new Crayon(color, length);
+        Crayon newCrayon = new Crayon(color, length, kit_id);
 //        Save data into repository
         Crayon addCrayon = crayonRepository.save(newCrayon);
 //        Return data
