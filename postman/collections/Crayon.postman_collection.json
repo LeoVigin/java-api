@@ -30,6 +30,10 @@
             {
               "key": "length",
               "value": ""
+            },
+            {
+              "key": "kit_id",
+              "value": ""
             }
           ]
         }
