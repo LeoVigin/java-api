@@ -1,5 +1,5 @@
 # Java Api
-This is an API about kits and tools you put inside in Java 21.
+This is an API about kits and tools you put inside using Java 21.
 
 ## Installation & Start
 - Download the folder or clone the repository using
