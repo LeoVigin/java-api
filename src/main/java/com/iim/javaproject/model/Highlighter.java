@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Highlighter implements PenInterface {
+public class Highlighter implements ToolInterface {
 
 //    Define properties of object
     private static int CPT = 1;
@@ -56,15 +56,7 @@ public class Highlighter implements PenInterface {
         }
     }
 
-    public void leak(boolean inkExplode){
-        if (inkExplode){
-            System.out.println("This highlighter ink exploded");
-        }
-        else {
-            System.out.println("This highlighter can be writen with");
-        }
-    }
-
+//    Check availability from ToolInterface
     @Override
     public void available(boolean using, Person person) {
         if (using) {

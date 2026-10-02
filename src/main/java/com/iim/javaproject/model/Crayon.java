@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
-public class Crayon implements PenInterface{
+public class Crayon implements ToolInterface{
 
 //    Define properties of object
     private static int CPT = 1;
@@ -42,8 +42,13 @@ public class Crayon implements PenInterface{
     }
 
 //    Actions set for a Crayon
-    public void write(int length) {
-        if (length > 10) {
+    public void write(int length, boolean isWriting, boolean isAvailable) {
+        if (isWriting) {
+            length = length - 1;
+            System.out.println(length + " cm is left to write with the pen");
+        }
+
+        if (length > 1) {
             System.out.println("This crayon can be writen with");
         } else if (length == 0) {
             System.out.println("This crayon doesnt exist anymore");
@@ -52,10 +57,11 @@ public class Crayon implements PenInterface{
         }
     }
 
+//    Check availability from ToolInterface
     @Override
     public void available(boolean using, Person person) {
         if (using) {
-            System.out.println(String.valueOf(person) + " is already using this pen");
+            System.out.println(person + " is already using this pen");
         } else {
             System.out.println("Available");
         }
