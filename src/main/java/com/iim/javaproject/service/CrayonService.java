@@ -50,7 +50,7 @@ public class CrayonService {
 //          Find the id of the object
         Crayon dataCrayon = crayonRepository.findById(id)
 //                  If not found throw error/string
-                .orElseThrow(() -> new RuntimeException("Person not found with id " + id));
+                .orElseThrow(() -> new RuntimeException("Crayon not found with id " + id));
 
 //          If found update the color by the new color put in the raw body of Postman
 //          Height cannot be changed

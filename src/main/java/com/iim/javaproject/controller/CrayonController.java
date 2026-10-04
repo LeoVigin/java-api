@@ -34,7 +34,7 @@ public class CrayonController {
 
 //    Get Id of an object
     @GetMapping("/{id}")
-    public Crayon getById(@RequestParam int id) {
+    public Crayon getById(@PathVariable("id") int id) {
         return crayonService.getById(id);
     }
 
@@ -55,6 +55,6 @@ public class CrayonController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable("id") int id) {
         crayonService.delete(id);
-        return ResponseEntity.ok("Highlighter deleted successfully");
+        return ResponseEntity.ok("Crayon deleted successfully");
     }
 }

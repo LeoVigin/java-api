@@ -1,6 +1,7 @@
 package com.iim.javaproject.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -17,34 +18,28 @@ public class Highlighter implements ToolInterface {
     @JsonProperty("Color")
     String color;
 
-//    Suppose to be the elements to form the link between the crayon and the kit. The kit posses the highlighters.
-    @JsonProperty("Crayon's kit")
-    int kit_id;
+//  Relation with kit
+    @Column(name = "kit_id")
+    @JsonProperty("KitId")
+    private int kitId;
 
-    public Highlighter() {
-    }
-
-//      Constructor
-    public Highlighter(String color, int kit_id) {
+    //      Constructor
+    public Highlighter(String color, int kitId) {
         this.id = CPT++;
         this.color = color;
-        this.kit_id = kit_id;
+        this.kitId = kitId;
     }
 
-//    Define set and get for update
+    //    Define set and get for update
     public void setColor(String color){
         this.color = color;
     }
-    public void setKitId(int kit_id){
-        this.kit_id = kit_id;
-    }
-
     public String getColor(){
         return color;
     }
-    public int getKitId(){
-        return kit_id;
-    }
+
+    public int getKitId() { return kitId; }
+    public void setKitId(int kitId) { this.kitId = kitId; }
 
 //    Actions set for a Highlighter
     public void write(boolean ink){

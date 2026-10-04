@@ -24,13 +24,15 @@
           "query": [
             {
               "key": "color",
-              "value": "",
-              "uuid": "fa9dc7e6-cb3e-44a7-9006-634bb9c9e20a"
+              "value": ""
             },
             {
               "key": "maxSpace",
-              "value": "",
-              "uuid": "184eb34b-6a91-4461-b16a-d75632ca0e05"
+              "value": ""
+            },
+            {
+              "key": "person_id",
+              "value": ""
             }
           ]
         }

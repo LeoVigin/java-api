@@ -34,7 +34,7 @@ public class HighlighterController {
 
 //    Get Id of an object
     @GetMapping("/{id}")
-    public Highlighter getHighlighter(@RequestParam int id){
+    public Highlighter getHighlighter(@PathVariable("id") int id){
         return highlighterService.getById(id);
     }
 

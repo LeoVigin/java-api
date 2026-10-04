@@ -20,17 +20,17 @@ public class Crayon implements ToolInterface{
     @JsonProperty("Length")
     int length;
 
-//    Suppose to be the elements to form the link between the crayon and the kit. The kit posses the crayons.
-    @JsonProperty("Crayon's kit")
-    int kit_id;
-
+//  Relation with kit
+    @Column(name = "kit_id")
+    @JsonProperty("KitId")
+    private int kitId;
 
     //      Constructor
-    public Crayon(String color, int length, int kit_id) {
+    public Crayon(String color, int length, int kitId) {
         this.id = CPT++;
         this.color = color;
         this.length = length;
-        this.kit_id = kit_id;
+        this.kitId = kitId;
     }
 
 //    Define set and get for update
@@ -40,6 +40,9 @@ public class Crayon implements ToolInterface{
     public String getColor(){
         return color;
     }
+
+    public int getKitId() { return kitId; }
+    public void setKitId(int kitId) { this.kitId = kitId; }
 
 //    Actions set for a Crayon
     public void write(int length, boolean isWriting, boolean isAvailable) {

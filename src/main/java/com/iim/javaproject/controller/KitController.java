@@ -27,14 +27,15 @@ public class KitController {
 
 //    Create an object
     @PostMapping
-    public Kit create(@RequestParam String color, @RequestParam int maxSpace){
+//    Does not require a person to be linked (person link not yet functional, always null)
+    public Kit create(@RequestParam String color, @RequestParam int maxSpace, @RequestParam(required = false) Integer person_id){
         roleUser.forEach(System.out::println);
         return kitService.create(color, maxSpace);
     }
 
 //    Get Id of an object
     @GetMapping("/{id}")
-    public Kit getById(@RequestParam int id) {
+    public Kit getById(@PathVariable("id") int id) {
         return kitService.getById(id);
     }
 
