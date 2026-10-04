@@ -12,9 +12,10 @@ clone https://github.com/LeoVigin/java-api.git
 ```
 docker compose up -d 
 ```
-- Import the Postman collection in the folder
+- Import the Postman collections in the folder
 - Run Postman and run your commands
 
-PS: the only tools right now are crayons and highlighter. BUT more tools can be added easily through copying and pasting the ones already existing and renaming them.
+PS: the only tools available right now are crayons and highlighter. BUT more tools can be added easily through copying and pasting the ones already existing and renaming them.
+
 ## Authors
 @LeoVigin <br>
